@@ -11,8 +11,6 @@ void swap(int *a, int *b) {
 
 int* generateIntArray(int n, int min, int max) {
 
-    srand(time(NULL));
-
     int *arr = (int*) malloc(n * sizeof(int));
 
     for(int i=0; i < n; i++)
@@ -27,4 +25,11 @@ void printArray(int *arr, int n) {
         printf("%d  ", arr[i]);
     
     printf("\n");
+}
+
+int randPivot(int begin, int end) {
+
+    int r = begin + rand() % (end - begin);
+
+    return r;
 }

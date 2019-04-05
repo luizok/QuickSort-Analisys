@@ -7,6 +7,7 @@
 #define LAST    0
 #define MID     1
 #define MD5     2
+#define RAND    3
 
 
 void swap(int *a, int *b);
