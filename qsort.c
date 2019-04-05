@@ -7,7 +7,7 @@ void _quickSortPointer(int *begin, int *end);
 int partitionLomuto(int *arr, int begin, int end);
 
 
-void quickSort(int *arr, int n) {
+void quickSort(int *arr, int n, int type) {
 
     if(type == INDEX)
         _quickSortIndex(arr, 0, n-1);
@@ -23,6 +23,8 @@ void _quickSortIndex(int *arr, int begin, int end) {
         _quickSortIndex(arr, pivot+1, end);
     }
 }
+
+void _quickSortPointer(int *begin, int *end) {};
 
 int partitionLomuto(int *arr, int begin, int end) {
 
