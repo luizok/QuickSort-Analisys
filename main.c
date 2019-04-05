@@ -6,11 +6,11 @@
 
 int main(int argc, char **argv) {
 
-    int n = 30;
+    int n = 20;
     int *arr = generateIntArray(n, 0, n);
 
     printArray(arr, n);
-    quickSort(arr, n);
+    quickSort(arr, n, INDEX);
     printArray(arr, n);
 
     return EXIT_SUCCESS;
