@@ -17,7 +17,21 @@ int partitionLomutoIndex(int *arr, int begin, int end) {
     return i;
 }
 
-int *partitionLomutoPointer(int *arr, int begin, int end) {};
+int *partitionLomutoPointer(int *begin, int *end) {
+
+    int *pivot = end;
+    int *lower = begin;
+
+    for(int *addr=begin; addr != end; addr++)
+        if(*addr <= *pivot) {
+            swap(addr, lower);
+            lower++;
+        }
+
+    swap(lower, end);
+
+    return lower;
+};
 
 // int partitionHoare(int *arr, int begin, int end) {
 
@@ -45,5 +59,6 @@ int choosePivot(int begin, int end, int type) {
         case LAST: return end;
         case MID:  return begin + (end - begin) / 2;
         case MD5:  return 0; // medianOfmedians();
+        case RAND: return randPivot();
     }
 }
