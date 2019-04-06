@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
     printArray(arr, n);
     printf("Array is sorted? %d\n", isSorted(arr, n));
-    quickSort(arr, n, INDEX);
+    quickSort(arr, n, INDEX, REC);
     printArray(arr, n);
     printf("Array is sorted? %d\n", isSorted(arr, n));
 

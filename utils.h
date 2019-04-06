@@ -9,6 +9,9 @@
 #define MD5     2
 #define RAND    3
 
+#define REC     0
+#define TAIL    1
+
 
 void swap(int *a, int *b);
 int randInt(int min, int max);
