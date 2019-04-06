@@ -11,6 +11,7 @@
 
 
 void swap(int *a, int *b);
+int randInt(int min, int max);
 int* generateIntArray(int n, int min, int max);
 void printArray(int *arr, int n);
 

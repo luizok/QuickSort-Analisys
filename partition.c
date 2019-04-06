@@ -59,6 +59,6 @@ int choosePivot(int begin, int end, int type) {
         case LAST: return end;
         case MID:  return begin + (end - begin) / 2;
         case MD5:  return 0; // medianOfmedians();
-        case RAND: return randPivot();
+        case RAND: return randInt(begin, end);
     }
 }
