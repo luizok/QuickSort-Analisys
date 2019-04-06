@@ -12,8 +12,10 @@ int main(int argc, char **argv) {
     int *arr = generateIntArray(n, 0, n);
 
     printArray(arr, n);
+    printf("Array is sorted? %d\n", isSorted(arr, n));
     quickSort(arr, n, INDEX);
     printArray(arr, n);
+    printf("Array is sorted? %d\n", isSorted(arr, n));
 
     return EXIT_SUCCESS;
 }
