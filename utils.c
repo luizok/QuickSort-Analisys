@@ -42,3 +42,17 @@ int isSorted(int *arr, int n) {
 
     return 1;
 }
+
+void selectionSort(int *arr, int n) {
+
+    int lower;
+    for(int i=0; i < n-1; i++) {
+        lower = i;
+        for(int j=i; j < n; j++) {
+            if(arr[j] < arr[lower])
+                lower = j;
+        }
+
+        swap(&arr[i], &arr[lower]);
+    }
+}

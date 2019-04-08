@@ -18,5 +18,6 @@ int randInt(int min, int max);
 int* generateIntArray(int n, int min, int max);
 void printArray(int *arr, int n);
 int isSorted(int *arr, int n);
+void selectionSort(int *arr, int n);
 
 #endif
