@@ -33,25 +33,22 @@ int *partitionLomutoPointer(int *begin, int *end) {
     return lower;
 };
 
-// int partitionHoare(int *arr, int begin, int end) {
+int partitionHoare(int *arr, int begin, int end) {
 
-//     int pivot = arr[end];
-//     int i = begin;
-//     int j = end;
+    int pivot = arr[begin + (end - end) / 2];
+    int i = begin - 1;
+    int j = end + 1;
 
-//     while(i <= j) {
-//         while(arr[i] < pivot) i++;
-//         while(arr[j] > pivot) j--;
+    while(1) {
+        do { i++; } while(arr[i] < pivot);
+        do { j--; } while(arr[j] > pivot);
 
-//         if(i <= j) {
-//             swap(&arr[i], &arr[j]);
-//             i++;
-//             j--;
-//         }
+        if(i >= j) return j;
 
-//         return i;
-//     }
-// }
+        swap(&arr[i], &arr[j]);
+    }
+
+}
 
 int choosePivot(int begin, int end, int type) {
 
