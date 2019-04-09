@@ -5,6 +5,7 @@
 int partitionLomutoIndex(int *arr, int begin, int end);
 int *partitionLomutoPointer(int *begin, int *end);
 int partitionHoare(int *arr, int begin, int end);
+int medianOfMedians(int *arr, int begin, int end);
 
 
 #endif

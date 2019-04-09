@@ -3,32 +3,31 @@
 #include <stdio.h>
 
 
-
 int medianOfMedians(int *arr, int begin, int end) {
 
-    int n = end - begin;
+    int n = end - begin + 1;
     int mod5 = n % 5;
     int div5 = n / 5;
 
-    if(n < 2) {
-        printArray(arr, n);
+    if(n < 5) {
+        selectionSort(&arr[0], mod5);
+        swap(&arr[0], &arr[n / 2]);
+
         return 0;
     }
 
     int i;
     for(i=0; i < div5; i++) {
-        selectionSort(&arr[5 * i], n >= 5 ? 5 : mod5);
+        selectionSort(&arr[5 * i], 5);
         swap(&arr[i], &arr[5 * i + 2]);
     }
 
-    if(n % 5 != 0) {
+    if(mod5 > 0) {
         selectionSort(&arr[5 * div5], mod5);
         swap(&arr[i], &arr[5 * div5 + mod5 / 2]);
     }
 
-    printArray(arr, n);
-
-    return medianOfMedians(arr, 0, div5 + (mod5 ? 1 : 0));
+    return medianOfMedians(arr, 0, div5 + (mod5 ? 1 : 0) - 1);
 }
 
 int choosePivot(int *arr, int begin, int end, int type) {
@@ -43,7 +42,10 @@ int choosePivot(int *arr, int begin, int end, int type) {
 
 int partitionLomutoIndex(int *arr, int begin, int end) {
 
-    int pivot = medianOfMedians(arr, begin, end);
+    medianOfMedians(&arr[begin], 0, end - begin);
+    swap(&arr[begin], &arr[end]);
+
+    int pivot = arr[end];
     int i = begin;
 
     for(int j=begin; j < end; j++)

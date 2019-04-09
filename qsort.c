@@ -32,8 +32,8 @@ void _quickSortTail(int *arr, int begin, int end) {
 void _quickSortIndex(int *arr, int begin, int end) {
 
     if(begin < end) {
-        int pivot = partitionHoare(arr, begin, end);
-        _quickSortIndex(arr, begin, pivot);
+        int pivot = partitionLomutoIndex(arr, begin, end);
+        _quickSortIndex(arr, begin, pivot-1);
         _quickSortIndex(arr, pivot+1, end);
     }
 }
