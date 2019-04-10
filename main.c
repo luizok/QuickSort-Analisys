@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
         scanf("%d", &idxPtr);
     
         if(idxPtr == 1)
-            quickSort(arr, n, POINTER, -1);
+            quickSort(arr, n, POINTER, -1, -1);
 
         else if(idxPtr == 0) {
             while(recTail != 0 && recTail != 1) {
@@ -45,10 +45,10 @@ int main(int argc, char **argv) {
                         scanf("%d", &pivot);
                     }
 
-                    quickSort(arr, n , INDEX, pivot);
+                    quickSort(arr, n , INDEX, REC, pivot);
 
                 } else if(recTail == 1)
-                    quickSort(arr, n, POINTER, TAIL);
+                    quickSort(arr, n, POINTER, TAIL, -1);
 
                 else
                     printf("Opcao invalida\n");

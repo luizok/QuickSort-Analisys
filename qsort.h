@@ -2,6 +2,6 @@
 #define QSORT_H
 
 
-void quickSort(int *arr, int n, int type, int rec);
+void quickSort(int *arr, int n, int type, int rec, int pChoose);
 
 #endif

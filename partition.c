@@ -37,10 +37,11 @@ int choosePivot(int *arr, int begin, int end, int type) {
         case MID:  return begin + (end - begin) / 2;
         case MD5:  return medianOfMedians(arr, begin, end);
         case RAND: return randInt(begin, end);
+        default: return end;
     }
 }
 
-int partitionLomutoIndex(int *arr, int begin, int end) {
+int partitionLomutoIndex(int *arr, int begin, int end, int pChoose) {
 
     medianOfMedians(&arr[begin], 0, end - begin);
     swap(&arr[begin], &arr[end]);
