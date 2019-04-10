@@ -22,7 +22,7 @@ int medianOfMedians(int *arr, int begin, int end) {
         swap(&arr[i], &arr[5 * i + 2]);
     }
 
-    if(mod5 > 0) {
+    if(mod5) {
         selectionSort(&arr[5 * div5], mod5);
         swap(&arr[i], &arr[5 * div5 + mod5 / 2]);
     }
@@ -35,7 +35,7 @@ int choosePivot(int *arr, int begin, int end, int type) {
     switch(type) {
         case LAST: return end;
         case MID:  return begin + (end - begin) / 2;
-        case MD5:  return medianOfMedians(arr, begin, end);
+        case MD5:  return medianOfMedians(arr, begin, end - begin);
         case RAND: return randInt(begin, end);
         default: return end;
     }
@@ -43,14 +43,22 @@ int choosePivot(int *arr, int begin, int end, int type) {
 
 int partitionLomutoIndex(int *arr, int begin, int end, int pChoose) {
 
-    medianOfMedians(&arr[begin], 0, end - begin);
-    swap(&arr[begin], &arr[end]);
+    int *pivot;
 
-    int pivot = arr[end];
+    if(pChoose == MD5) {
+        choosePivot(&arr[begin], 0, end - begin, pChoose);
+        swap(&arr[begin], &arr[end]);
+    } else {
+        pivot = &arr[choosePivot(NULL, begin, end, pChoose)];
+        swap(pivot, &arr[end]);
+    }
+
+    pivot = &arr[end];
+
     int i = begin;
 
     for(int j=begin; j < end; j++)
-        if(arr[j] < pivot) {
+        if(arr[j] < *pivot) {
             swap(&arr[i], &arr[j]);
             i++;
         }
