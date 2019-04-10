@@ -58,8 +58,8 @@ int main(int argc, char **argv) {
             printf("Opcao invalida\n");
     }
 
-    printArray(arr, n);
-    printf("Vetor esta ordenado (x[i] <= x[i+1])? %d\n", isSorted(arr, n));
+    // printArray(arr, n);
+    printf("Vetor esta ordenado (x[i] <= x[i+1])? %s\n", isSorted(arr, n) ? "TRUE" : "FALSE");
 
     return EXIT_SUCCESS;
 }
