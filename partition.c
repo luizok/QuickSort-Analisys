@@ -41,6 +41,11 @@ int choosePivot(int *arr, int begin, int end, int type) {
     }
 }
 
+int escolher_pivo(int begin, int end) {
+
+    return choosePivot(NULL, begin, end, LAST);
+}
+
 int partitionLomutoIndex(int *arr, int begin, int end, int pChoose) {
 
     int *pivot;

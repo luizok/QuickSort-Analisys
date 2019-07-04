@@ -6,6 +6,7 @@ int partitionLomutoIndex(int *arr, int begin, int end, int pChoose);
 int *partitionLomutoPointer(int *begin, int *end);
 int partitionHoare(int *arr, int begin, int end);
 int medianOfMedians(int *arr, int begin, int end);
+int escolher_pivo(int begin, int end);
 
 
 #endif
